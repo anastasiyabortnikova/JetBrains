@@ -45,20 +45,20 @@ While the `contract()` function is effective in contracting preposition-article 
 >
 > + Ich bin **in dem Park**, **wo** wir uns letztes Mal getroffen haben. <sub>Modifier, contraction is not allowed</sub>
 >
-> + Ich lese ein Buch, **in dem** Lehrer über ihre Erfahrungen berichten. <sub>No prepositional phrase with the preposition-pair *in dem*, contraction is not allowed</sub>
+> + Ich lese ein Buch, **in dem** Lehrer über ihre Erfahrungen berichten. <sub>No prepositional phrase with the preposition-article pair *in dem*, contraction is not allowed</sub>
         
 2. The algorithm can not detect sentences where it is not possible to make a contraction without altering the meaning of the sentence. The preposition-article pair can not be contracted if the definite article is used as a demonstrative pronoun (meaning: this/that):
 
-> + Zu dem Arzt gehen wir nie wieder hin.
+> + Zu **dem** Arzt gehen wir nie wieder hin.
 >
-> + In dem Restaurant war ich auch noch nicht.
+> + In **dem** Restaurant war ich auch noch nicht.
     
 3. The dictionary does not include certain preposition-article pairs that are able to be contracted, as these forms are rarely used and almost only found in colloquial language. These are following contracted forms: *hinters*, *übers*, *unters*, *vors*, *aufm*, *ausm*, *hinterm*, *überm*, *unterm*, *vorm*, *aufn*, *hintern*, *übern*, *untern*, *vorn*.
 
 
 ## Improvement suggestions
 
-1. To overcome these limitations, one possible option is to use Python libraries and tools that enable working with POS and syntax tags. For instance, NLTK or Spacy. By doing so, the algorithm can effectively handle sentence structure and contract preposition-article pairs based on syntactical relationships. The focus of the algorithm should be on identifying the noun as part of a prepositional phrase, along with any possible modifiers.
+1. To overcome these limitations, one possible option is to use Python libraries and tools that enable working with POS and syntax tags. For instance, *NLTK* or *Spacy*. By doing so, the algorithm can effectively handle sentence structure and contract preposition-article pairs based on syntactical relationships. The focus of the algorithm should be on identifying the noun as part of a prepositional phrase, along with any possible modifiers.
 
 2. If the sentence allows the use of colloquial expressions, the algorithm should include additional preposition-article pairs that are commonly used in colloquial language. Thus, the algorithm should also take into account the style of the text, style tags should be embedded within the code. This same principle can be used for decontraction if the contraction does not match the selected text style.
 
