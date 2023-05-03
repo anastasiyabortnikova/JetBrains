@@ -74,7 +74,7 @@ Contributions to this project are welcome.
 2. Clone the repository: git clone `https://github.com/anastasiyabortnikova/JetBrains.git`.
 3. Run the script: `test_task_contraction_v1.py` with the following command: `pytest test_task_contraction_v1.py`.
 
-The tests 1 to 4 have passed succesfully, while tests 5 to 7 are failing due to missing POS and syntax tags.
+The tests 1 to 4 have passed succesfully, while tests 5 to 8 are failing due to missing POS and syntax tags.
 
 
 ## License
