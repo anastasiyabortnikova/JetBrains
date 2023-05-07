@@ -1,5 +1,5 @@
 import pytest
-from task_contraction_v1 import contract
+from simple_algorithm import contract
 
     
 def test_contract_prep_art_at_the_end():
