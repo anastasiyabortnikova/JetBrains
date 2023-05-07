@@ -26,13 +26,11 @@ def test_contract_if_relative_clause_with_relative_pronoun():
 
 def test_contract_if_relative_clause_with_relative_adverb():
     #Test case 6: shows that the algorithm does not work on a relative clause which is introduced by a relative adverb.
-    assert contract("Ich bin in dem Park, wo wir uns letztes Mal getroffen haben, dann gehe ich in das Theater") == \ 
-    "Ich bin in dem Park, wo wir uns letztes Mal getroffen haben, dann gehe ich ins Theater."
+    assert contract("Ich bin in dem Park, wo wir uns letztes Mal getroffen haben, dann gehe ich in das Theater") == "Ich bin in dem Park, wo wir uns letztes Mal getroffen haben, dann gehe ich ins Theater."
     
 def test_contract_if_relative_clause_with_preposition_and_relative_pronoun(): 
     #Test case 7: shows that the algorithm does not work on a relative clause which is introduced by a preposition before a relative pronoun.
-    assert contract("Ich lese ein Buch, in dem Lehrer über ihre Erfahrungen berichten.") == \
-    "Ich lese ein Buch, in dem Lehrer über ihre Erfahrungen berichten."
+    assert contract("Ich lese ein Buch, in dem Lehrer über ihre Erfahrungen berichten.") == "Ich lese ein Buch, in dem Lehrer über ihre Erfahrungen berichten."
     
 def test_contract_if_def_art_used_as_demonstrative_pronoun():
     #Test case 8: shows that the algorithm does not work if the definite article is used as a demonstrative pronoun.
