@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[55]:
+# In[56]:
 
 
 import spacy 
@@ -57,7 +57,7 @@ def contract(sentence):
                         else: 
                             for key in prep_art_contraction_dict.keys():
                                 if noun_token.i > 1 and noun_token.nbor(-1).text.lower() in key[1] and noun_token.nbor(-2).text.lower() in key[0]:
-                                    contraction = prep_art_contraction_dict[(noun_token.nbor(-2).text.lower(), noun_token.nbor(-1).text).lower()]
+                                    contraction = prep_art_contraction_dict[(noun_token.nbor(-2).text.lower(), noun_token.nbor(-1).text)]
                                     sentence_with_contraction = doc.text[:noun_token.nbor(-2).idx] + contraction + " " + doc.text[noun_token.idx:]
                                     doc = nlp(sentence_with_contraction)
                                     contractions_made = True
