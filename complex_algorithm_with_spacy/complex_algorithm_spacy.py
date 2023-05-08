@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[56]:
+# In[57]:
 
 
 import spacy 
@@ -43,6 +43,9 @@ def contract(sentence):
         for match_id, start, end in matches:
             prep_phrase = doc[start:end].text
         
+            if any([token.tag_ == "PRELS" or token.tag_ == "PWOV" for token in doc[start:end]]):
+                continue
+            
             # Checked if the noun in the prepositional phrase has a relative clause that is modifying this noun.
             for token in doc[start:end]:
                 if token.pos_ == "NOUN":
