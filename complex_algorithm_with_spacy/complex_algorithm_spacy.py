@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[57]:
+# In[59]:
 
 
 import spacy 
@@ -42,9 +42,6 @@ def contract(sentence):
     if matches:
         for match_id, start, end in matches:
             prep_phrase = doc[start:end].text
-        
-            if any([token.tag_ == "PRELS" or token.tag_ == "PWOV" for token in doc[start:end]]):
-                continue
             
             # Checked if the noun in the prepositional phrase has a relative clause that is modifying this noun.
             for token in doc[start:end]:
@@ -53,9 +50,13 @@ def contract(sentence):
                     if noun_token:
                         has_relative_clause = False
                         for child in noun_token.children:
-                            if child.dep_ == "rc":
+                            if child.dep == "rc" and (child.tag_ == "PRELS" or child.tag_ == "PWOV"):
                                 has_relative_clause = True
                                 break
+                            elif child.dep_ == "rc":
+                                has_relative_clause = True
+                                break
+                            
                         # If there is no relative clause, the preposition-article-pair can be contracted.           
                         else: 
                             for key in prep_art_contraction_dict.keys():
