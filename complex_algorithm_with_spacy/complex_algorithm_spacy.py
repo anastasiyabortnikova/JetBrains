@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[53]:
+# In[55]:
 
 
 import spacy 
@@ -56,13 +56,13 @@ def contract(sentence):
                         # If there is no relative clause, the preposition-article-pair can be contracted.           
                         else: 
                             for key in prep_art_contraction_dict.keys():
-                                if noun_token.nbor(-1).text in key[1] and noun_token.nbor(-2).text in key[0]:
-                                    contraction = prep_art_contraction_dict[(noun_token.nbor(-2).text, noun_token.nbor(-1).text)]
+                                if noun_token.i > 1 and noun_token.nbor(-1).text.lower() in key[1] and noun_token.nbor(-2).text.lower() in key[0]:
+                                    contraction = prep_art_contraction_dict[(noun_token.nbor(-2).text.lower(), noun_token.nbor(-1).text).lower()]
                                     sentence_with_contraction = doc.text[:noun_token.nbor(-2).idx] + contraction + " " + doc.text[noun_token.idx:]
                                     doc = nlp(sentence_with_contraction)
                                     contractions_made = True
     if contractions_made:
-        return sentence_with_contraction
+        return sentence_with_contraction[0].upper() + sentence_with_contraction[1:]
     else:
         return sentence
       
