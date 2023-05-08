@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[59]:
+# In[60]:
 
 
 import spacy 
@@ -50,10 +50,7 @@ def contract(sentence):
                     if noun_token:
                         has_relative_clause = False
                         for child in noun_token.children:
-                            if child.dep == "rc" and (child.tag_ == "PRELS" or child.tag_ == "PWOV"):
-                                has_relative_clause = True
-                                break
-                            elif child.dep_ == "rc":
+                            if child.dep_ == "rc" and (child.tag_ == "PRELS" or child.tag_ == "PWOV"):
                                 has_relative_clause = True
                                 break
                             
